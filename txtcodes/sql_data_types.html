@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Data Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .code-container {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .code-container code {
+            color: #ffcc00;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SQL Data Types</h1>
+        <p>SQL supports a wide range of data types for defining columns in tables. These data types can be categorized into several groups: numeric, string, date and time, binary, and other types. Here is a comprehensive list of common SQL data types across various SQL databases:</p>
+
+        <h2>Numeric Data Types</h2>
+        <h3>Integer Types</h3>
+        <ul>
+            <li><code>INT</code> or <code>INTEGER</code>: A standard integer.</li>
+            <li><code>SMALLINT</code>: A smaller range integer.</li>
+            <li><code>TINYINT</code>: A very small integer (supported in MySQL).</li>
+            <li><code>BIGINT</code>: A large range integer.</li>
+        </ul>
+
+        <h3>Decimal Types</h3>
+        <ul>
+            <li><code>DECIMAL(p, s)</code> or <code>NUMERIC(p, s)</code>: Fixed-point numbers where <code>p</code> is precision (total number of digits) and <code>s</code> is scale (number of digits to the right of the decimal point).</li>
+            <li><code>FLOAT</code>: Floating-point number with single precision.</li>
+            <li><code>DOUBLE</code> or <code>DOUBLE PRECISION</code>: Floating-point number with double precision.</li>
+            <li><code>REAL</code>: Single precision floating-point number (commonly used in PostgreSQL).</li>
+        </ul>
+
+        <h3>Bit Types</h3>
+        <ul>
+            <li><code>BIT</code>: A bit field or binary field.</li>
+        </ul>
+
+        <h2>String Data Types</h2>
+        <h3>Character Types</h3>
+        <ul>
+            <li><code>CHAR(n)</code> or <code>CHARACTER(n)</code>: Fixed-length string where <code>n</code> is the number of characters.</li>
+            <li><code>VARCHAR(n)</code> or <code>CHARACTER VARYING(n)</code>: Variable-length string with a maximum length of <code>n</code> characters.</li>
+            <li><code>TEXT</code>: Variable-length string with no specific upper limit (size may vary based on the database system).</li>
+        </ul>
+
+        <h3>Binary Types</h3>
+        <ul>
+            <li><code>BINARY(n)</code>: Fixed-length binary data.</li>
+            <li><code>VARBINARY(n)</code>: Variable-length binary data with a maximum length of <code>n</code> bytes.</li>
+            <li><code>BLOB</code>: Binary Large Object for storing large binary data.</li>
+        </ul>
+
+        <h2>Date and Time Data Types</h2>
+        <h3>Date and Time</h3>
+        <ul>
+            <li><code>DATE</code>: Stores a date (year, month, day).</li>
+            <li><code>TIME</code>: Stores a time of day (hours, minutes, seconds).</li>
+            <li><code>DATETIME</code>: Stores both date and time.</li>
+            <li><code>TIMESTAMP</code>: Stores both date and time, often with timezone information.</li>
+            <li><code>YEAR</code>: Stores a year value (supported in MySQL).</li>
+        </ul>
+
+        <h3>Interval Types (PostgreSQL specific)</h3>
+        <ul>
+            <li><code>INTERVAL</code>: Represents a time span (years, months, days, hours, minutes, seconds).</li>
+        </ul>
+
+        <h2>Other Data Types</h2>
+        <h3>Boolean</h3>
+        <ul>
+            <li><code>BOOLEAN</code>: Stores <code>TRUE</code> or <code>FALSE</code>.</li>
+        </ul>
+
+        <h3>UUID</h3>
+        <ul>
+            <li><code>UUID</code>: Universal Unique Identifier (supported in PostgreSQL).</li>
+        </ul>
+
+        <h3>Enumerated Types</h3>
+        <ul>
+            <li><code>ENUM('value1', 'value2', ...)</code>: A string object that can only have one value, chosen from a list of allowed values (supported in MySQL).</li>
+        </ul>
+
+        <h3>JSON Types</h3>
+        <ul>
+            <li><code>JSON</code>: Stores JSON (JavaScript Object Notation) data.</li>
+            <li><code>JSONB</code>: Binary JSON storage format for JSON data (PostgreSQL).</li>
+        </ul>
+
+        <h3>Geometric Types (PostgreSQL specific)</h3>
+        <ul>
+            <li><code>POINT</code>: Represents a geometric point.</li>
+            <li><code>LINE</code>: Represents a geometric line.</li>
+            <li><code>LSEG</code>: Represents a line segment.</li>
+            <li><code>BOX</code>: Represents a rectangular box.</li>
+            <li><code>PATH</code>: Represents a geometric path.</li>
+            <li><code>POLYGON</code>: Represents a polygon.</li>
+            <li><code>CIRCLE</code>: Represents a circle.</li>
+        </ul>
+
+        <h3>XML Types</h3>
+        <ul>
+            <li><code>XML</code>: Stores XML data.</li>
+        </ul>
+
+        <h3>Arrays (PostgreSQL specific)</h3>
+        <ul>
+            <li><code>ARRAY</code>: Stores an array of values.</li>
+        </ul>
+    </div>
+</body>
+</html>
