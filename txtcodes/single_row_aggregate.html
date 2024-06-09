@@ -12,7 +12,7 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: #333;
         }
         p {
@@ -32,6 +32,31 @@
             color: #007bff;
             margin-bottom: 10px;
         }
+        .code-container {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .code-container code {
+            color: #ffcc00;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -49,6 +74,52 @@
             <p>Single-row functions return a single value for each row processed by the query. These values can be of various data types, depending on the function's operation and the input data.</p>
             <p>Aggregate functions, however, return a single result based on the entire set of rows processed by the query. The result is usually a summary value, such as the average, sum, count, maximum, or minimum of a column's values.</p>
         </div>
+
+        <h2>Examples</h2>
+
+        <h3>Single-Row Function Example</h3>
+        <p>In this example, we'll use the <code>UPPER</code> function to convert the names in a column to uppercase:</p>
+        <div class="code-container">
+            <code>SELECT UPPER(name) AS uppercase_name FROM students;</code>
+        </div>
+        <p>This query will return each student's name in uppercase:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>uppercase_name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>JOHN</td>
+                </tr>
+                <tr>
+                    <td>JANE</td>
+                </tr>
+                <tr>
+                    <td>ALICE</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Aggregate Function Example</h3>
+        <p>In this example, we'll use the <code>AVG</code> function to calculate the average age of students:</p>
+        <div class="code-container">
+            <code>SELECT AVG(age) AS average_age FROM students;</code>
+        </div>
+        <p>This query will return the average age of all students:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>average_age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>25</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
