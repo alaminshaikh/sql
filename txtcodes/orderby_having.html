@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpose of ORDER BY and HAVING Clauses in SQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        pre {
+            background: #e4e4e4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Purpose of ORDER BY and HAVING Clauses in SQL</h1>
+        
+        <h2>i) ORDER BY Clause</h2>
+        <p>The <code>ORDER BY</code> clause is used to sort the result set of a query by one or more columns. The sorting can be in ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. By default, the sorting is in ascending order if no order is specified.</p>
+        
+        <h3>Purpose</h3>
+        <ul>
+            <li><strong>Sorting Results:</strong> The primary purpose is to organize the query results in a specific order.</li>
+            <li><strong>Enhancing Readability:</strong> Makes it easier to read and analyze the results, especially when dealing with large datasets.</li>
+        </ul>
+        
+        <h3>Syntax</h3>
+        <pre><code>SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1 [ASC|DESC], column2 [ASC|DESC], ...;</code></pre>
+        
+        <h3>Example</h3>
+        <pre><code>SELECT first_name, last_name, age
+FROM students
+ORDER BY last_name ASC, age DESC;</code></pre>
+        <p>In this example, the results are sorted first by <code>last_name</code> in ascending order, and then by <code>age</code> in descending order within each <code>last_name</code>.</p>
+        
+        <h2>ii) HAVING Clause</h2>
+        <p>The <code>HAVING</code> clause is used to filter records that have been aggregated by the <code>GROUP BY</code> clause. It is similar to the <code>WHERE</code> clause, but <code>HAVING</code> is used to filter groups rather than individual rows.</p>
+        
+        <h3>Purpose</h3>
+        <ul>
+            <li><strong>Filtering Groups:</strong> It allows for conditions to be applied to groups of rows created by the <code>GROUP BY</code> clause.</li>
+            <li><strong>Aggregate Functions:</strong> It is typically used with aggregate functions (e.g., <code>SUM</code>, <code>COUNT</code>, <code>AVG</code>) to filter groups based on aggregate values.</li>
+        </ul>
+        
+        <h3>Syntax</h3>
+        <pre><code>SELECT column1, aggregate_function(column2)
+FROM table_name
+GROUP BY column1
+HAVING condition;</code></pre>
+        
+        <h3>Example</h3>
+        <pre><code>SELECT department, COUNT(employee_id) AS num_employees
+FROM employees
+GROUP BY department
+HAVING COUNT(employee_id) > 10;</code></pre>
+        <p>In this example, the query retrieves the departments that have more than 10 employees. The <code>HAVING</code> clause filters the groups formed by <code>GROUP BY</code> based on the aggregate count of <code>employee_id</code>.</p>
+    </div>
+</body>
+</html>
