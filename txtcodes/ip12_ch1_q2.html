@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Command Outputs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sql-command {
+            margin-bottom: 20px;
+        }
+        .sql-command h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .sql-output {
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SQL Command Outputs</h1>
+
+        <div class="sql-command">
+            <h3>a) SELECT POW(2,3);</h3>
+            <p>Returns the result of raising 2 to the power of 3.</p>
+            <div class="sql-output">8</div>
+        </div>
+
+        <div class="sql-command">
+            <h3>b) SELECT ROUND(123.2345, 2), ROUND(342.9234,-1);</h3>
+            <p>Rounds the given numbers to the specified number of decimal places. The first number is rounded to 2 decimal places, and the second number is rounded to the nearest ten.</p>
+            <div class="sql-output">123.23, 340</div>
+        </div>
+
+        <div class="sql-command">
+            <h3>c) SELECT LENGTH("Informatics Practices");</h3>
+            <p>Returns the length of the given string.</p>
+            <div class="sql-output">21</div>
+        </div>
+
+        <div class="sql-command">
+            <h3>d) SELECT YEAR("1979/11/26"), MONTH("1979/11/26"), DAY("1979/11/26"), MONTHNAME("1979/11/26");</h3>
+            <p>Extracts different parts of the date "1979/11/26". YEAR returns the year, MONTH returns the month, DAY returns the day, and MONTHNAME returns the name of the month.</p>
+            <div class="sql-output">1979, 11, 26, November</div>
+        </div>
+
+        <div class="sql-command">
+            <h3>e) SELECT LEFT("INDIA",3), RIGHT("Computer Science",4);</h3>
+            <p>Returns a specified number of characters from the left and right sides of the given strings.</p>
+            <div class="sql-output">IND, ence</div>
+        </div>
+
+        <div class="sql-command">
+            <h3>f) SELECT MID("Informatics",3,4), SUBSTR("Practices",3);</h3>
+            <p>Returns a substring from the given string starting at the specified position and optionally with the specified length.</p>
+            <div class="sql-output">form, actices</div>
+        </div>
+    </div>
+</body>
+</html>
