@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differences Between Single-Row Functions and Aggregate Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .difference {
+            margin-bottom: 20px;
+        }
+        .difference h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Differences Between Single-Row Functions and Aggregate Functions</h1>
+
+        <div class="difference">
+            <h3>1. Application Scope</h3>
+            <p>Single-row functions operate on single rows of data and return a single result per row. They are applied to each row individually within a query.</p>
+            <p>Aggregate functions, on the other hand, operate on multiple rows of data and return a single result for the entire set of rows. They are typically used with the <code>GROUP BY</code> clause to group the rows into subsets for calculation.</p>
+        </div>
+
+        <div class="difference">
+            <h3>2. Result Type</h3>
+            <p>Single-row functions return a single value for each row processed by the query. These values can be of various data types, depending on the function's operation and the input data.</p>
+            <p>Aggregate functions, however, return a single result based on the entire set of rows processed by the query. The result is usually a summary value, such as the average, sum, count, maximum, or minimum of a column's values.</p>
+        </div>
+    </div>
+</body>
+</html>
