@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference between DBMS and RDBMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Difference between DBMS and RDBMS</h1>
+        <p>The terms Database Management System (DBMS) and Relational Database Management System (RDBMS) are often used interchangeably, but they refer to different concepts in database management. Here are the key differences between a DBMS and an RDBMS:</p>
+        
+        <h2>DBMS (Database Management System)</h2>
+        <ul>
+            <li><strong>Definition:</strong> A DBMS is a software system that provides a way to store, retrieve, and manage data in databases. It supports various database models, including hierarchical, network, object-oriented, and relational.</li>
+            <li><strong>Data Structure:</strong> DBMSs can handle databases where data is stored in various structures, such as hierarchical databases (tree-like structure), network databases (graph structure), and more.</li>
+            <li><strong>Normalization:</strong> DBMSs do not necessarily enforce data normalization, which means that there can be redundancy and inconsistency in the data.</li>
+            <li><strong>Relationships:</strong> While a DBMS can manage databases with simple relationships between data, it does not inherently support complex relationships as naturally as an RDBMS.</li>
+            <li><strong>Transactions:</strong> DBMSs may not fully support ACID (Atomicity, Consistency, Isolation, Durability) properties, which are crucial for reliable transaction processing.</li>
+            <li><strong>Examples:</strong> Examples of DBMS include older systems like IBM's IMS (Information Management System) and some object-oriented databases.</li>
+        </ul>
+        
+        <h2>RDBMS (Relational Database Management System)</h2>
+        <ul>
+            <li><strong>Definition:</strong> An RDBMS is a type of DBMS that is based on the relational model introduced by E.F. Codd. Data is stored in tables (relations), which are composed of rows and columns.</li>
+            <li><strong>Data Structure:</strong> RDBMSs use a tabular structure where data is organized into tables with rows and columns. Each table represents a different entity, and relationships between entities are managed through foreign keys.</li>
+            <li><strong>Normalization:</strong> RDBMSs support data normalization, which eliminates redundancy and ensures data integrity through the use of normalized tables and constraints.</li>
+            <li><strong>Relationships:</strong> RDBMSs inherently support complex relationships through primary keys, foreign keys, and join operations, allowing for sophisticated queries across multiple tables.</li>
+            <li><strong>Transactions:</strong> RDBMSs fully support ACID properties, ensuring reliable and secure transaction processing. This makes them suitable for applications requiring high data integrity and consistency.</li>
+            <li><strong>Examples:</strong> Examples of RDBMS include Oracle Database, Microsoft SQL Server, MySQL, PostgreSQL, and IBM Db2.</li>
+        </ul>
+        
+        <h2>Key Differences</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>DBMS</th>
+                    <th>RDBMS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Model</strong></td>
+                    <td>Supports multiple data models (hierarchical, network, etc.)</td>
+                    <td>Specifically supports the relational model</td>
+                </tr>
+                <tr>
+                    <td><strong>Structure</strong></td>
+                    <td>Can have various structures</td>
+                    <td>Always uses a tabular structure</td>
+                </tr>
+                <tr>
+                    <td><strong>Normalization</strong></td>
+                    <td>May not enforce normalization</td>
+                    <td>Enforces normalization</td>
+                </tr>
+                <tr>
+                    <td><strong>Relationships</strong></td>
+                    <td>Handles simpler relationships</td>
+                    <td>Manages complex relationships through foreign keys and joins</td>
+                </tr>
+                <tr>
+                    <td><strong>Transactions</strong></td>
+                    <td>May have limited support for ACID properties</td>
+                    <td>Ensures ACID properties</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage</strong></td>
+                    <td>Used for simpler, less critical applications</td>
+                    <td>Used for applications requiring complex queries and data integrity</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Conclusion</h2>
+        <p>While both DBMS and RDBMS are crucial for managing databases, RDBMS offers more advanced features, especially for handling relational data with complex relationships, enforcing data integrity, and supporting robust transaction management. This makes RDBMS the preferred choice for modern applications requiring high levels of data consistency and reliability.</p>
+    </div>
+</body>
+</html>
