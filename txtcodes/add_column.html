@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL ALTER TABLE Examples</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>SQL ALTER TABLE Examples</h1>
+    <table>
+        <tr>
+            <th>SQL Command</th>
+            <th>Explanation</th>
+        </tr>
+        <tr>
+            <td>ALTER TABLE users<br>ADD email_verified BOOLEAN DEFAULT false;</td>
+            <td>Adds a new column <code>email_verified</code> with a data type <code>BOOLEAN</code> and a default value of <code>false</code>.</td>
+        </tr>
+        <tr>
+            <td>ALTER TABLE users<br>ADD email VARCHAR(255) UNIQUE;</td>
+            <td>Adds a new column <code>email</code> with a data type <code>VARCHAR(255)</code> and a unique constraint.</td>
+        </tr>
+        <tr>
+            <td>ALTER TABLE orders<br>ADD customer_id INT,<br>ADD CONSTRAINT fk_customer<br>FOREIGN KEY (customer_id)<br>REFERENCES customers(id);</td>
+            <td>Adds a new column <code>customer_id</code> to the <code>orders</code> table and creates a foreign key constraint named <code>fk_customer</code>, which references the <code>id</code> column in the <code>customers</code> table.</td>
+        </tr>
+        <tr>
+            <td>ALTER TABLE products<br>ADD INDEX idx_product_name (name);</td>
+            <td>Adds an index named <code>idx_product_name</code> to the <code>name</code> column in the <code>products</code> table.</td>
+        </tr>
+        <tr>
+            <td>ALTER TABLE employees<br>ADD id INT AUTO_INCREMENT PRIMARY KEY;</td>
+            <td>Adds a new column <code>id</code> to the <code>employees</code> table, sets it as an auto-incrementing primary key column.</td>
+        </tr>
+    </table>
+</body>
+</html>
