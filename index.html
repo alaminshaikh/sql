@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA Cheatsheet- Alamin Shaikh</title>
+    <style>
+        .l-row{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 10px;
+            justify-content: space-between;
+        }
+        .l-row span{
+            margin: 0 10px 5px 0;
+            display: flex;
+            width: 20%;
+        }
+        .l-row a{
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 600px){ 
+            .l-row span{
+                width: 90%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>JAVA Cheatsheet by Alamin Shaikh</h2>
+    <div id="main-div" class="l-row">
+        <!-- <ul id="fileList"></ul> -->
+    </div>
+    
+
+    <script>
+        // Function to generate the file list
+        function generateFileList() {
+            //const fileList = document.getElementById('fileList');
+            const MainDiv  = document.getElementById('main-div');
+            // GitHub username and repository name
+            const username = 'alaminshaikh';
+            const repo = 'java';
+            var count = 1;
+
+            fetch(`https://api.github.com/repos/${username}/${repo}/contents/txtcodes`)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(file => {
+                        const filename = file.name;
+                        const listItem = document.createElement('span');
+                        listItem.innerHTML = '<a href="txtcodes/'+filename+'" target="_blank">'+count+'&bull;'+' '+filename+'</a>';
+                        count +=1;
+                        MainDiv.appendChild(listItem);
+                    });
+                });
+        }
+
+        // Call the function when the page loads
+        window.onload = generateFileList;
+    </script>
+</body>
+</html>
