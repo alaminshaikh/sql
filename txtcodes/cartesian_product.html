@@ -12,7 +12,7 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: #333;
         }
         p {
@@ -32,6 +32,38 @@
             color: #007bff;
             margin-bottom: 10px;
         }
+        .example {
+            margin-bottom: 20px;
+        }
+        .example h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .code-container {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .code-container code {
+            color: #ffcc00;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -45,12 +77,37 @@
 
         <div class="example">
             <h3>Example</h3>
-            <p>Consider two tables: <code>table1</code> with columns <code>column1</code> and <code>table2</code> with columns <code>column2</code>. Performing a Cartesian Product between these two tables results in a new table with every possible combination of rows from <code>table1</code> and <code>table2</code>.</p>
+            <p>Consider two tables: <code>products</code> with columns <code>product_id</code> and <code>product_name</code>, and <code>categories</code> with columns <code>category_id</code> and <code>category_name</code>. Performing a Cartesian Product between these two tables results in a new table with every possible combination of products and categories.</p>
             <p>The SQL query for a Cartesian Product looks like this:</p>
             <div class="code-container">
-                <code>SELECT * FROM table1 CROSS JOIN table2;</code>
+                <code>SELECT * FROM products CROSS JOIN categories;</code>
             </div>
-            <p>This query will return a result set where each row from <code>table1</code> is paired with every row from <code>table2</code>.</p>
+            <p>This query will return a result set where each product is paired with every category:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>product_id</th>
+                        <th>product_name</th>
+                        <th>category_id</th>
+                        <th>category_name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Product A</td>
+                        <td>1</td>
+                        <td>Category 1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Product A</td>
+                        <td>2</td>
+                        <td>Category 2</td>
+                    </tr>
+                    <!-- Additional rows for other products and categories -->
+                </tbody>
+            </table>
         </div>
 
         <div class="usage">
