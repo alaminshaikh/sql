@@ -1,62 +1,119 @@
-Relational Database Management Systems (RDBMS) come in various types, each designed to meet specific requirements and use cases. Below are the main types of RDBMS:
-1. Commercial RDBMS
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Relational Database Management Systems (RDBMS)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .section ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Types of Relational Database Management Systems (RDBMS)</h1>
 
-Commercial RDBMS are developed and sold by software companies, usually with comprehensive support and additional features. Examples include:
+        <div class="section">
+            <h2>1. Commercial RDBMS</h2>
+            <p>Commercial RDBMS are developed and sold by software companies, usually with comprehensive support and additional features. Examples include:</p>
+            <ul>
+                <li>Oracle Database: Known for its robustness, scalability, and extensive feature set, often used in large enterprises.</li>
+                <li>Microsoft SQL Server: Offers tight integration with Microsoft products, widely used in business environments.</li>
+                <li>IBM Db2: Known for its high performance and advanced analytics capabilities.</li>
+                <li>SAP HANA: An in-memory, column-oriented, relational database management system developed by SAP.</li>
+            </ul>
+        </div>
 
-    Oracle Database: Known for its robustness, scalability, and extensive feature set, often used in large enterprises.
-    Microsoft SQL Server: Offers tight integration with Microsoft products, widely used in business environments.
-    IBM Db2: Known for its high performance and advanced analytics capabilities.
-    SAP HANA: An in-memory, column-oriented, relational database management system developed by SAP.
+        <div class="section">
+            <h2>2. Open-Source RDBMS</h2>
+            <p>Open-source RDBMS are freely available and often maintained by a community of developers. Examples include:</p>
+            <ul>
+                <li>MySQL: One of the most popular open-source databases, known for its ease of use and reliability.</li>
+                <li>PostgreSQL: An advanced open-source RDBMS known for its standards compliance and extensibility.</li>
+                <li>MariaDB: A fork of MySQL, created by the original developers of MySQL, offering additional features and improved performance.</li>
+                <li>SQLite: A lightweight, serverless database engine, often embedded in applications and devices.</li>
+            </ul>
+        </div>
 
-2. Open-Source RDBMS
+        <div class="section">
+            <h2>3. Cloud-Based RDBMS</h2>
+            <p>Cloud-based RDBMS are hosted on cloud platforms, offering scalability and managed services. Examples include:</p>
+            <ul>
+                <li>Amazon RDS (Relational Database Service): Supports several database engines like MySQL, PostgreSQL, Oracle, and SQL Server.</li>
+                <li>Google Cloud SQL: Managed relational database service for MySQL, PostgreSQL, and SQL Server.</li>
+                <li>Microsoft Azure SQL Database: A fully managed SQL database service built on SQL Server.</li>
+                <li>Oracle Autonomous Database: Cloud-based database service with self-managing capabilities.</li>
+            </ul>
+        </div>
 
-Open-source RDBMS are freely available and often maintained by a community of developers. Examples include:
+        <div class="section">
+            <h2>4. Distributed RDBMS</h2>
+            <p>Distributed RDBMS store data across multiple physical locations, providing high availability and fault tolerance. Examples include:</p>
+            <ul>
+                <li>CockroachDB: Designed to scale horizontally and survive hardware failures without manual intervention.</li>
+                <li>Google Spanner: A globally distributed database service that provides strong consistency and high availability.</li>
+                <li>Citus (built on PostgreSQL): Scales out PostgreSQL by distributing data and queries across multiple nodes.</li>
+            </ul>
+        </div>
 
-    MySQL: One of the most popular open-source databases, known for its ease of use and reliability.
-    PostgreSQL: An advanced open-source RDBMS known for its standards compliance and extensibility.
-    MariaDB: A fork of MySQL, created by the original developers of MySQL, offering additional features and improved performance.
-    SQLite: A lightweight, serverless database engine, often embedded in applications and devices.
+        <div class="section">
+            <h2>5. Embedded RDBMS</h2>
+            <p>Embedded RDBMS are integrated within applications and are typically lightweight and require minimal configuration. Examples include:</p>
+            <ul>
+                <li>SQLite: A self-contained, serverless database engine embedded within applications.</li>
+                <li>H2 Database: A lightweight Java database that can be embedded in Java applications.</li>
+                <li>Derby (Apache Derby): A lightweight, embeddable database for Java applications.</li>
+            </ul>
+        </div>
 
-3. Cloud-Based RDBMS
+        <div class="section">
+            <h2>6. Columnar RDBMS</h2>
+            <p>Columnar RDBMS are optimized for read-heavy operations and analytical queries, storing data in columns rather than rows. Examples include:</p>
+            <ul>
+                <li>Amazon Redshift: A cloud-based data warehouse service optimized for large-scale data analytics.</li>
+                <li>Google BigQuery: A fully managed, serverless data warehouse for analytics at scale.</li>
+                <li>ClickHouse: An open-source columnar database management system for online analytical processing (OLAP).</li>
+            </ul>
+        </div>
 
-Cloud-based RDBMS are hosted on cloud platforms, offering scalability and managed services. Examples include:
+        <div class="section">
+            <h2>7. Time-Series RDBMS</h2>
+            <p>Time-series RDBMS are designed to handle time-series data, which is data indexed by time. Examples include:</p>
+            <ul>
+                <li>TimescaleDB: An extension for PostgreSQL optimized for time-series data.</li>
+                <li>InfluxDB: A time-series database designed for high-performance storage and retrieval of time-stamped data.</li>
+            </ul>
+        </div>
 
-    Amazon RDS (Relational Database Service): Supports several database engines like MySQL, PostgreSQL, Oracle, and SQL Server.
-    Google Cloud SQL: Managed relational database service for MySQL, PostgreSQL, and SQL Server.
-    Microsoft Azure SQL Database: A fully managed SQL database service built on SQL Server.
-    Oracle Autonomous Database: Cloud-based database service with self-managing capabilities.
-
-4. Distributed RDBMS
-
-Distributed RDBMS store data across multiple physical locations, providing high availability and fault tolerance. Examples include:
-
-    CockroachDB: Designed to scale horizontally and survive hardware failures without manual intervention.
-    Google Spanner: A globally distributed database service that provides strong consistency and high availability.
-    Citus (built on PostgreSQL): Scales out PostgreSQL by distributing data and queries across multiple nodes.
-
-5. Embedded RDBMS
-
-Embedded RDBMS are integrated within applications and are typically lightweight and require minimal configuration. Examples include:
-
-    SQLite: A self-contained, serverless database engine embedded within applications.
-    H2 Database: A lightweight Java database that can be embedded in Java applications.
-    Derby (Apache Derby): A lightweight, embeddable database for Java applications.
-
-6. Columnar RDBMS
-
-Columnar RDBMS are optimized for read-heavy operations and analytical queries, storing data in columns rather than rows. Examples include:
-
-    Amazon Redshift: A cloud-based data warehouse service optimized for large-scale data analytics.
-    Google BigQuery: A fully managed, serverless data warehouse for analytics at scale.
-    ClickHouse: An open-source columnar database management system for online analytical processing (OLAP).
-
-7. Time-Series RDBMS
-
-Time-series RDBMS are designed to handle time-series data, which is data indexed by time. Examples include:
-
-    TimescaleDB: An extension for PostgreSQL optimized for time-series data.
-    InfluxDB: A time-series database designed for high-performance storage and retrieval of time-stamped data.
-
-Summary
-
-Each type of RDBMS is tailored to specific use cases, from enterprise-scale solutions and cloud-based services to lightweight embedded databases and specialized systems for analytical queries. The choice of RDBMS depends on factors such as scalability, performance, ease of use, and the specific requirements of the application or organization.
+        <p><strong>Summary:</strong> Each type of RDBMS is tailored to specific use cases, from enterprise-scale solutions and cloud-based services to lightweight embedded databases and specialized systems for analytical queries. The choice of RDBMS depends on factors such as scalability, performance, ease of use, and the specific requirements of the application or organization.</p>
+    </div>
+</body>
+</html>
