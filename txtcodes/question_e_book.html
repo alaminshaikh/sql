@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions for Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .operation {
+            margin-bottom: 20px;
+        }
+        .operation h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .operation p {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Functions for Operations</h1>
+
+        <div class="operation">
+            <h3>i) Display the day from the date of India's independence</h3>
+            <p>
+                To display the day like "Monday", "Tuesday", etc., from the date when India got independence (August 15, 1947), you can use the <code>DAYNAME()</code> function in SQL.
+            </p>
+            <p>Example:</p>
+            <p><code>SELECT DAYNAME('1947-08-15');</code></p>
+        </div>
+
+        <div class="operation">
+            <h3>ii) Display specified number of characters from a string</h3>
+            <p>
+                To display a specified number of characters from a particular position of the given string, you can use the <code>SUBSTRING()</code> function in SQL.
+            </p>
+            <p>Example:</p>
+            <p><code>SELECT SUBSTRING('Hello World', 1, 5);</code></p>
+        </div>
+
+        <div class="operation">
+            <h3>iii) Display the name of the month of your birth</h3>
+            <p>
+                To display the name of the month in which you were born, you can use the <code>MONTHNAME()</code> function in SQL.
+            </p>
+            <p>Example:</p>
+            <p><code>SELECT MONTHNAME('1990-05-15');</code></p>
+        </div>
+
+        <div class="operation">
+            <h3>iv) Display your name in capital letters</h3>
+            <p>
+                To display your name in capital letters, you can use the <code>UPPER()</code> function in SQL.
+            </p>
+            <p>Example:</p>
+            <p><code>SELECT UPPER('your_name');</code></p>
+        </div>
+    </div>
+</body>
+</html>
