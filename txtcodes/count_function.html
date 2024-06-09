@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding the COUNT Function in MySQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        pre {
+            background: #e4e4e4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Understanding the COUNT Function in MySQL</h1>
+
+        <h2>What is the COUNT Function?</h2>
+        <p>The <code>COUNT</code> function in MySQL is an aggregate function that returns the number of rows that match a specified condition. It's often used to count the number of rows in a table, count the number of non-NULL values in a column, or count distinct values. Here are some key aspects and examples to help you understand its usage:</p>
+
+        <h3>Basic Usage</h3>
+
+        <h4>Counting All Rows</h4>
+        <pre><code>SELECT COUNT(*)
+FROM table_name;</code></pre>
+        <p>This counts all rows in the table, including rows with NULL values.</p>
+
+        <h4>Counting Non-NULL Values in a Column</h4>
+        <pre><code>SELECT COUNT(column_name)
+FROM table_name;</code></pre>
+        <p>This counts all non-NULL values in the specified column.</p>
+
+        <h4>Counting Distinct Values</h4>
+        <pre><code>SELECT COUNT(DISTINCT column_name)
+FROM table_name;</code></pre>
+        <p>This counts the number of distinct (unique) non-NULL values in the specified column.</p>
+
+        <h3>Example</h3>
+        <p>Consider a table named <code>employees</code> with the following structure:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>employee_id</th>
+                    <th>first_name</th>
+                    <th>last_name</th>
+                    <th>department</th>
+                    <th>salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>HR</td>
+                    <td>50000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane</td>
+                    <td>Smith</td>
+                    <td>IT</td>
+                    <td>60000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sam</td>
+                    <td>Brown</td>
+                    <td>HR</td>
+                    <td>NULL</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Mike</td>
+                    <td>Wilson</td>
+                    <td>IT</td>
+                    <td>55000</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Sue</td>
+                    <td>Davis</td>
+                    <td>IT</td>
+                    <td>60000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Count All Rows</h4>
+        <pre><code>SELECT COUNT(*)
+FROM employees;</code></pre>
+        <p>Result: <code>5</code></p>
+
+        <h4>Count Non-NULL Salaries</h4>
+        <pre><code>SELECT COUNT(salary)
+FROM employees;</code></pre>
+        <p>Result: <code>4</code> (because one salary is NULL)</p>
+
+        <h4>Count Distinct Departments</h4>
+        <pre><code>SELECT COUNT(DISTINCT department)
+FROM employees;</code></pre>
+        <p>Result: <code>2</code> (HR and IT)</p>
+
+        <h4>Count Employees in Each Department</h4>
+        <pre><code>SELECT department, COUNT(employee_id) AS num_employees
+FROM employees
+GROUP BY department;</code></pre>
+        <p>Result:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>department</th>
+                    <th>num_employees</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HR</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>IT</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Explanation</h3>
+        <p><code>COUNT(employee_id)</code>: This part of the query counts the number of non-NULL <code>employee_id</code> values in each department.</p>
+        <p><code>AS num_employees</code>: This gives the resulting count a more descriptive name. Instead of just showing a column called <code>COUNT(employee_id)</code>, it will be labeled as <code>num_employees</code> in the result set.</p>
+
+        <h3>Summary</h3>
+        <ul>
+            <li><strong>COUNT(*)</strong>: Counts all rows in a table, including rows with NULL values.</li>
+            <li><strong>COUNT(column_name)</strong>: Counts non-NULL values in the specified column.</li>
+            <li><strong>COUNT(DISTINCT column_name)</strong>: Counts distinct (unique) non-NULL values in the specified column.</li>
+            <li><strong>GROUP BY</strong>: Often used with <code>COUNT</code> to count rows per group.</li>
+        </ul>
+
+        <p>These functions and their variations make <code>COUNT</code> a versatile tool for data analysis and reporting in MySQL.</p>
+    </div>
+</body>
+</html>
