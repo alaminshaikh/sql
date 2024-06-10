@@ -1,0 +1,7 @@
+Temporary tables are used for storing intermediate results and are automatically dropped at the end of the session.
+
+CREATE TEMPORARY TABLE temp_students (
+    student_id INT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50)
+);
