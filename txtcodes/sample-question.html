@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee SQL Queries and Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Table and Queries</h1>
+
+    <h2>Employee Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Emp_ID</th>
+                <th>First_Name</th>
+                <th>Middle_Name</th>
+                <th>Last_Name</th>
+                <th>Email</th>
+                <th>Mobile_No</th>
+                <th>Retire_date</th>
+                <th>Job_ID</th>
+                <th>Salary</th>
+                <th>Dept_Name</th>
+                <th>Dept_ID</th>
+                <th>Manager_ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>John</td><td>A</td><td>Smith</td><td>john.smith@example.com</td><td>9876543210</td><td>2045-12-31</td><td>J001</td><td>30000.00</td><td>IT</td><td>80</td><td>100</td></tr>
+            <tr><td>2</td><td>Alice</td><td>NULL</td><td>Anderson</td><td>alice.anderson@example.com</td><td>8765432109</td><td>2040-11-30</td><td>J002</td><td>28000.00</td><td>HR</td><td>60</td><td>101</td></tr>
+            <tr><td>3</td><td>Robert</td><td>B</td><td>Brown</td><td>robert.brown@example.com</td><td>7654321098</td><td>2035-10-15</td><td>J003</td><td>24000.00</td><td>Finance</td><td>80</td><td>100</td></tr>
+            <tr><td>4</td><td>Emily</td><td>NULL</td><td>Taylor</td><td>emily.taylor@example.com</td><td>6543210987</td><td>2042-05-20</td><td>J004</td><td>32000.00</td><td>Marketing</td><td>90</td><td>102</td></tr>
+            <tr><td>5</td><td>Michael</td><td>NULL</td><td>Johnson</td><td>michael.johnson@example.com</td><td>5432109876</td><td>2047-03-18</td><td>J005</td><td>26000.00</td><td>IT</td><td>80</td><td>100</td></tr>
+            <tr><td>6</td><td>Sophia</td><td>C</td><td>Williams</td><td>sophia.williams@example.com</td><td>4321098765</td><td>2039-07-12</td><td>J006</td><td>22000.00</td><td>HR</td><td>60</td><td>101</td></tr>
+            <tr><td>7</td><td>Daniel</td><td>NULL</td><td>Adams</td><td>daniel.adams@example.com</td><td>3210987654</td><td>2038-01-25</td><td>J007</td><td>27000.00</td><td>Finance</td><td>80</td><td>103</td></tr>
+            <tr><td>8</td><td>Grace</td><td>NULL</td><td>Allen</td><td>grace.allen@example.com</td><td>2109876543</td><td>2037-09-05</td><td>J008</td><td>18000.00</td><td>IT</td><td>80</td><td>100</td></tr>
+            <tr><td>9</td><td>James</td><td>NULL</td><td>Evans</td><td>james.evans@example.com</td><td>1098765432</td><td>2043-04-11</td><td>J009</td><td>25000.00</td><td>Marketing</td><td>90</td><td>102</td></tr>
+            <tr><td>10</td><td>Olivia</td><td>NULL</td><td>White</td><td>olivia.white@example.com</td><td>0987654321</td><td>2041-06-30</td><td>J010</td><td>23000.00</td><td>Finance</td><td>80</td><td>103</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Queries and Results</h2>
+
+    <h3>(a) Employees with Salary >= 25000</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Emp_ID</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>John</td><td>Smith</td></tr>
+            <tr><td>2</td><td>Alice</td><td>Anderson</td></tr>
+            <tr><td>4</td><td>Emily</td><td>Taylor</td></tr>
+            <tr><td>5</td><td>Michael</td><td>Johnson</td></tr>
+            <tr><td>7</td><td>Daniel</td><td>Adams</td></tr>
+            <tr><td>9</td><td>James</td><td>Evans</td></tr>
+        </tbody>
+    </table>
+
+    <h3>(b) Employees under Manager_ID = 100</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Emp_ID</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>John</td><td>Smith</td></tr>
+            <tr><td>3</td><td>Robert</td><td>Brown</td></tr>
+            <tr><td>5</td><td>Michael</td><td>Johnson</td></tr>
+            <tr><td>8</td><td>Grace</td><td>Allen</td></tr>
+        </tbody>
+    </table>
+
+    <h3>(c) Employees whose Last_Name starts with 'A'</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Emp_ID</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>2</td><td>Alice</td><td>Anderson</td></tr>
+            <tr><td>7</td><td>Daniel</td><td>Adams</td></tr>
+            <tr><td>8</td><td>Grace</td><td>Allen</td></tr>
+        </tbody>
+    </table>
+
+    <h3>(d) Employees in Dept_ID = 80</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Emp_ID</th>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>John</td><td>Smith</td></tr>
+            <tr><td>3</td><td>Robert</td><td>Brown</td></tr>
+            <tr><td>5</td><td>Michael</td><td>Johnson</td></tr>
+            <tr><td>7</td><td>Daniel</td><td>Adams</td></tr>
+            <tr><td>8</td><td>Grace</td><td>Allen</td></tr>
+            <tr><td>10</td><td>Olivia</td><td>White</td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
