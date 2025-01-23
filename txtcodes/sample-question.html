@@ -27,6 +27,14 @@
         th {
             background-color: #f2f2f2;
         }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            font-family: Consolas, monospace;
+        }
+        .question {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -66,6 +74,24 @@
 
     <h2>Queries and Results</h2>
 
+    <h3>Questions and Commands</h3>
+    <div class="question">
+        <p>(a) Find out the <code>Emp_ID</code> and names whose salary is greater than or equal to Rs. 25000/-</p>
+        <code>SELECT Emp_ID, First_Name, Last_Name FROM EMPLOYEE WHERE Salary >= 25000;</code>
+    </div>
+    <div class="question">
+        <p>(b) List out all the employees who work under <code>Manager_ID = 100</code>.</p>
+        <code>SELECT Emp_ID, First_Name, Last_Name FROM EMPLOYEE WHERE Manager_ID = 100;</code>
+    </div>
+    <div class="question">
+        <p>(c) List out all the employees whose <code>Last_Name</code> starts with "A".</p>
+        <code>SELECT Emp_ID, First_Name, Last_Name FROM EMPLOYEE WHERE Last_Name LIKE 'A%';</code>
+    </div>
+    <div class="question">
+        <p>(d) List out all the employees who work in <code>Dept_ID = 80</code>.</p>
+        <code>SELECT Emp_ID, First_Name, Last_Name FROM EMPLOYEE WHERE Dept_ID = 80;</code>
+    </div>
+
     <h3>(a) Employees with Salary >= 25000</h3>
     <table>
         <thead>
@@ -95,47 +121,4 @@
             </tr>
         </thead>
         <tbody>
-            <tr><td>1</td><td>John</td><td>Smith</td></tr>
-            <tr><td>3</td><td>Robert</td><td>Brown</td></tr>
-            <tr><td>5</td><td>Michael</td><td>Johnson</td></tr>
-            <tr><td>8</td><td>Grace</td><td>Allen</td></tr>
-        </tbody>
-    </table>
-
-    <h3>(c) Employees whose Last_Name starts with 'A'</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Emp_ID</th>
-                <th>First_Name</th>
-                <th>Last_Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>2</td><td>Alice</td><td>Anderson</td></tr>
-            <tr><td>7</td><td>Daniel</td><td>Adams</td></tr>
-            <tr><td>8</td><td>Grace</td><td>Allen</td></tr>
-        </tbody>
-    </table>
-
-    <h3>(d) Employees in Dept_ID = 80</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Emp_ID</th>
-                <th>First_Name</th>
-                <th>Last_Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>1</td><td>John</td><td>Smith</td></tr>
-            <tr><td>3</td><td>Robert</td><td>Brown</td></tr>
-            <tr><td>5</td><td>Michael</td><td>Johnson</td></tr>
-            <tr><td>7</td><td>Daniel</td><td>Adams</td></tr>
-            <tr><td>8</td><td>Grace</td><td>Allen</td></tr>
-            <tr><td>10</td><td>Olivia</td><td>White</td></tr>
-        </tbody>
-    </table>
-
-</body>
-</html>
+            <tr><td>1</td><td>John</td><td>Smith</td></tr
